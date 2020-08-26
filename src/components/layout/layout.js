@@ -1,11 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { Layout, Menu } from "antd";
 import {
   DesktopOutlined,
-  LaptopOutlined,
-  DatabaseOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from "@ant-design/icons";
@@ -61,8 +58,10 @@ export default function StandardLayout({ title, header, subheader, children }) {
             className="p-3"
             style={{
               padding: "1rem",
-              overflowY: "scroll",
               paddingBottom: "2rem",
+              maxWidth: "1200px",
+              marginLeft: "auto",
+              marginRight: "auto"
             }}
           >
             {children}

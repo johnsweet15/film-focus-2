@@ -1,7 +1,26 @@
-import Head from "next/head";
-import Layout from "../components/layout/layout";
-import { Button, Card } from "antd";
+import React, { useEffect, useState } from "react";
+import MovieService from "../services/movies";
+import MovieCard from "../components/movieCard/movieCard";
 
 export default function Home() {
-  return <Button>Hey there</Button>;
+  const [loading, setLoading] = useState(true);
+  const [popularMovies, setPopularMovies] = useState(null);
+
+  useEffect(() => {
+    getPopularMovies();
+  }, []);
+
+  async function getPopularMovies() {
+    let response = await MovieService.getPopularMovies();
+    setPopularMovies(response.data.results);
+    setLoading(false);
+  }
+
+  return (
+    <div>
+      {popularMovies?.map((movie) => {
+        return <MovieCard loading={loading} movie={movie} />;
+      })}
+    </div>
+  );
 }
