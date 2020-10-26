@@ -1,12 +1,12 @@
-import service from "./service";
 import appconfig from "../config/appconfig";
 import keys from "../config/keys";
+import service from './globalService.ts';
 
 const keyString = `?api_key=${keys.tmdbKey}`;
 
 class MovieService {
   async getPopularMovies() {
-    return service.get(`${appconfig.tmdbEndpoint}/movie/now_playing${keyString}`);
+    return service.get(`/movie/now_playing${keyString}`);
   }
 
   async getMovieDetails(id) {

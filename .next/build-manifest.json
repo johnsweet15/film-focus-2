@@ -28,6 +28,10 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
+    "/error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/index": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",

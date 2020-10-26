@@ -8,7 +8,6 @@ function Movie(props) {
   const [loading, setLoading] = useState(true);
 
   const router = useRouter();
-  console.log(router)
   const { id } = router.query;
 
   useEffect(() => {
